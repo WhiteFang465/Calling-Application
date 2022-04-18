@@ -25,12 +25,13 @@ public class RegisterActivity extends AppCompatActivity {
 
         registerButton.setOnClickListener(v -> {
 
-            Intent sendDataToMainActivity = new Intent()
+            Intent sendDataToMainActivity = new Intent(this,MainActivity.class)
                     .putExtra(EXTRA_NAME, registerName.getText().toString())
                     .putExtra(EXTRA_NUMBER, registerPhone.getText().toString())
                     .putExtra(IS_REGISTERED,"true");
-            setResult(RESULT_OK, sendDataToMainActivity);
-            finish();
+//            setResult(RESULT_OK, sendDataToMainActivity);
+//            finish();
+            startActivity(sendDataToMainActivity);
         });
     }
 }
