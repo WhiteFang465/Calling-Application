@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/AndroidClass/CallingApplication/app/src/main/res/layout/activity_main.xml" value="0.1859375" />
+        <entry key="..\:/AndroidClass/CallingApplication/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/AndroidClass/CallingApplication/app/src/main/res/layout/activity_register.xml" value="0.2" />
+        <entry key="..\:/AndroidClass/CallingApplication/app/src/main/res/layout/appbar.xml" value="0.1" />
+        <entry key="..\:/AndroidClass/CallingApplication/app/src/main/res/menu/appbarmenu.xml" value="0.2" />
       </map>
     </option>
   </component>
