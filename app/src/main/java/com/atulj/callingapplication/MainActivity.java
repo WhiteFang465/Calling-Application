@@ -15,6 +15,8 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
 
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private Button register;
     private Button call;
     private TextView textView;
+    private ConstraintLayout layout;
     private ActivityResultLauncher<Intent> getRegisteredDetails = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(), result -> {
                 if (result.getResultCode() == RESULT_OK) {
@@ -58,6 +61,10 @@ public class MainActivity extends AppCompatActivity {
         if (item.getItemId() == R.id.more) {
             Toast.makeText(this, "Reset", Toast.LENGTH_SHORT).show();
 
+
+        }
+        else if(item.getItemId()==R.id.AppBarSetColor){
+
         }
         return true;
     }
@@ -70,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         register = findViewById(R.id.MainActivityRegisterButton);
         textView = findViewById(R.id.MainActivityTextView);
 
-        register.setOnClickListener(this::changeActivityToRegister);
+
 
         call = findViewById(R.id.MainActivityCallButton);
 
@@ -99,6 +106,9 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(phoneIntent);
                         })
                         .show();
+                register.setOnClickListener(c->{
+                    Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show();
+                });
 
 
             });
@@ -107,9 +117,11 @@ public class MainActivity extends AppCompatActivity {
             Log.e("Name", "Name " + name);
             Log.e("phone", "phone :" + phone);
             Log.e("Not registered", "not registered");
+            register.setOnClickListener(this::changeActivityToRegister);
             call.setOnClickListener(v -> {
                 Snackbar.make(register, "Please Register to use this feature", BaseTransientBottomBar.LENGTH_INDEFINITE)
                         .show();
+
             });
         }
     }
